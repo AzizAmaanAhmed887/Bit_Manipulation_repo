@@ -17,8 +17,8 @@ public class binary_operator {
 
     public static void main(String[] args) {
         System.out.println("Binary One's Complement: " + binaryOnesComplement(0));
-//        System.out.println("Binary And: " + binaryAND(5, 6));
-//        System.out.println("Binary OR: " + binaryOR(5, 6));
-//        System.out.println("Binary XOR: " + binaryXOR(5, 6));
+        System.out.println("Binary And: " + binaryAND(5, 6));
+        System.out.println("Binary OR: " + binaryOR(5, 6));
+        System.out.println("Binary XOR: " + binaryXOR(5, 6));
     }
 }
