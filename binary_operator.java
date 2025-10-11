@@ -19,7 +19,12 @@ public class binary_operator {
         return a << b;
     }
 
+    public static int binaryRightShift(int a, int b) {
+        return a >> b;
+    }
+
     public static void main(String[] args) {
         System.out.println(binaryLeftShift(5, 2)); // Output: 20
+        System.out.println(binaryRightShift(20, 2)); // Output: 5
     }
 }
