@@ -23,8 +23,16 @@ public class binary_operator {
         return a >> b;
     }
 
+    public static void oddOrEven(int num) {
+        int bitMask = 1; // 0001 in binary
+        if ((num & bitMask) == 0) {
+            System.out.println(num + " is Even");
+        } else {
+            System.out.println(num + " is Odd");
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(binaryLeftShift(5, 2)); // Output: 20
-        System.out.println(binaryRightShift(20, 2)); // Output: 5
+        oddOrEven(6);
     }
 }
