@@ -17,6 +17,12 @@ Clone the repository and open it in IntelliJ IDEA. All source files are located 
 
 Each Java file demonstrates a specific bit manipulation concept. Run the files individually to see outputs and explanations.
 
+## Lectures
+
+Lecture 4 : get ith bit
+
 ## License
 
 This project is licensed under the MIT License.
+
+
