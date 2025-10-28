@@ -68,7 +68,7 @@ public class bitManipulation {
         int left = ~0 << (j + 1);
 
         // right part
-        int right = (1 << i) -1;
+        int right = (1 << i) - 1;
 
         // final mask
         int mask = left | right;
@@ -77,7 +77,84 @@ public class bitManipulation {
         return range & mask;
     }
 
+    public static boolean isPowOfTwo(int num) {
+        return (num & (num - 1)) == 0; // true, else false
+    }
+
+    public static int countSetBits(int num) {
+        int count = 0;
+        while (num > 0) {
+            if ((num & 1) != 0) {
+                count++;
+            }
+            num = num >> 1;
+        }
+        return count;
+    }
+
+//    public static int fastExponentiation(int a, int n) {
+//        int ans = 1;
+//        while (n > 0) {
+//            if ((n & 1) != 0) { // checking LSB
+//                ans = ans * a;
+//            }
+//            a = a * a;
+//            n = n >> 1;
+//        }
+//        return ans;
+//    }
+
+    public static int fastExpo(int base, int power) {
+        int result = 1;
+
+        while (power > 0) {
+            if ((power & 1) != 0) {
+                // check LSB of power
+                result = result * base;
+            }
+            base *= base;
+            power = power >> 1;
+        }
+
+        return result;
+    }
+
+    public static int modulerExpo(int base, int exponent, int modulus) {
+        // Edge case:
+        if (modulus == 1) {
+            return 0;
+        }
+
+        int result = 1; // Initialize result with 1
+
+        // take base inside modulus
+        base = base % modulus;
+
+        // loop till expo > 0
+        while (exponent > 0) {
+            if (exponent % 2 == 1) {
+                result *= base;
+            }
+
+            // half the expo
+            exponent = exponent >> 1;
+
+            // square the base
+            base *= base;
+
+        }
+        // return result
+        return result;
+    }
+
     public static void main(String[] args) {
-        System.out.println(clearRangeBits(10, 2,7));
+        int base = 2;
+        int exponent = 10;
+        int modulus = 1000;
+        System.out.println("(" + base + "^" + exponent + ") % " + modulus +
+                " = " + modulerExpo(base, exponent, modulus));
+        // Output: 24//        System.out.println(fastExpo(3, 5));
+//        System.out.println(countSetBits(16));
+//        System.out.println(isPowOfTwo(7));
     }
 }
